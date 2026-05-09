@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    
+    /* Using your new background image */
+    background: #0b0d17; 
+    background-image: url('CO.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 60px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message-section {
+    max-width: 650px;
+    width: 90%;
+    text-align: center;
+}
+
+.reveal {
+    font-size: 1.1rem;
+    margin: 20px 0;
+    padding: 22px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    border-radius: 20px;
+    
+    /* Deep blue glass look */
+    background: rgba(22, 33, 62, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    
+    /* Text hidden state */
+    color: transparent;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    user-select: none;
+}
+
+.reveal:hover:not(.active) {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(22, 33, 62, 0.8);
+}
+
+.reveal.active {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a1a2e;
+    text-shadow: none;
+    transform: scale(1.05);
+    border: 1px solid white;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    /* Tiny star texture on the white box */
+    background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.reveal.covered {
+    opacity: 0.3;
+    filter: blur(2px);
+    transform: scale(0.97);
+}
+
+/* Sticker Styling */
+.end-sticker {
+    display: block;
+    margin: 30px auto;
+    max-width: 220px;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sticker-visible {
+    opacity: 1;
+    transform: translateY(0) rotate(-5deg);
+}
+
+#reset-btn {
+    margin-top: 50px;
+    padding: 12px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    transition: 0.3s;
+}
+
+#reset-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
